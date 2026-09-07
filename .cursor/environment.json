@@ -1,0 +1,12 @@
+{
+  "name": "Unraid AI Remote Actions",
+  "install": "sudo apt-get update && sudo apt-get install -y tailscale curl netcat-openbsd",
+  "start": "bash scripts/start-tailscale.sh",
+  "terminals": [
+    {
+      "name": "unraid-check",
+      "command": "bash scripts/ensure-unraid.sh",
+      "description": "Verify Tailscale connectivity to Unraid (unraid-docker-1 @ 100.68.72.35)"
+    }
+  ]
+}
