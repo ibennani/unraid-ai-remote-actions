@@ -4,13 +4,19 @@
 
 GitHub: `https://github.com/ibennani/unraid-ai-remote-actions`
 
-## Required secret
+## Required secret (dashboard)
 
-Set `TAILSCALE_AUTH_KEY` as a **Runtime Secret** in the Cloud Agents dashboard for this environment.
+Add `TAILSCALE_AUTH_KEY` as a **Runtime Secret** in Cloud Agents → Environments → Unraid AI Remote Actions → Secrets.
+
+Create keys at: https://login.tailscale.com/admin/settings/keys (reusable + ephemeral recommended).
+
+## Network
+
+This environment needs outbound access to Tailscale control plane and your tailnet. Use **Allow all network access** or add Tailscale domains to the allowlist.
 
 ## Verify Unraid connectivity
 
-After the environment build completes, run:
+After environment build:
 
 ```bash
 bash scripts/ensure-unraid.sh
@@ -22,9 +28,4 @@ Expected target:
 - IP: `100.68.72.35`
 - CDP: `http://100.68.72.35:9222`
 - Web GUI: `https://100.68.72.35:3010/`
-
-## SSH
-
-```bash
-tailscale ssh root@unraid-docker-1
-```
+- SSH: `tailscale ssh root@unraid-docker-1`

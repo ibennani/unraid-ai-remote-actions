@@ -1,6 +1,6 @@
 {
   "name": "Unraid AI Remote Actions",
-  "install": "sudo apt-get update && sudo apt-get install -y tailscale curl netcat-openbsd",
+  "install": "sudo apt-get update && sudo apt-get install -y tailscale curl netcat-openbsd iputils-ping",
   "start": "bash scripts/start-tailscale.sh",
   "terminals": [
     {
